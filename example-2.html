@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>jQuery Mobile</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0-rc.1/jquery.mobile-1.1.0-rc.1.min.css" />
+		<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.1.0-rc.1/jquery.mobile-1.1.0-rc.1.min.js"></script>
+	</head>
+	<body>
+		
+<!-- Begin: page -->
+<section data-role="page" id="page1">
+	<header data-role="header">
+		<h1>jQuery Mobile</h1>
+	</header>
+	<div data-role="content">	
+		<p>Swipe me to show Dialog</a></p>
+	</div>
+	<footer data-role="footer">
+		<h3>O'Reilly</h3>
+	</footer>
+</section>
+
+<!-- Begin: dialog -->
+<section data-role="page" id="dialog">
+	<header data-role="header">
+		<h1>jQuery Mobile</h1>
+	</header>
+	<div data-role="content">	
+		<p>This is a dialog.</p>
+	</div>
+</section>
+
+<script>
+$(document).on("swipe", "#page1", function(event) {
+	$.mobile.changePage("#dialog", {
+		"role": "dialog"
+	});
+})
+$.mobile.addResolutionBreakpoints(1200);
+</script>
+
+	</body>
+</html>

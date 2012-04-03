@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>jQuery Mobile</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0-rc.1/jquery.mobile-1.1.0-rc.1.min.css" />
+		<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.1.0-rc.1/jquery.mobile-1.1.0-rc.1.min.js"></script>
+	</head>
+	<body>
+		
+<!-- Begin: page -->
+<section data-role="page" id="page1">
+	<header data-role="header">
+		<h1>jQuery Mobile</h1>
+	</header>
+	<div data-role="content">	
+		<p>Change orientations to see different header and footer.</p>
+	</div>
+	<footer data-role="footer">
+		<h3>O'Reilly</h3>
+	</footer>
+</section>
+
+<script>
+$(document).on("orientationchange", function(event) {
+	if (event.orientation === "landscape") {
+		// We have changed to landscape orientation, so we have more room
+		// Make the headers and footers longer!
+		$("header h1").text("jQuery Mobile Demonstration Application")
+		$("footer h3").text("O'Reilly Multimedia Services")
+	} else {
+		// Back in portrait orientation, so return header and footer to original length.
+		$("header h1").text("jQuery Mobile")
+		$("footer h3").text("O'Reilly")
+	}
+})
+</script>
+
+	</body>
+</html>

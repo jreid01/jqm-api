@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>jQuery Mobile</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0-rc.1/jquery.mobile-1.1.0-rc.1.min.css" />
+		<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.1.0-rc.1/jquery.mobile-1.1.0-rc.1.min.js"></script>
+		<script>
+// Bind to all page events to demonstrate event order
+// Delegate events to sections where relevant
+$(document).on("pageshow", "section", function() {
+	console.log('pageshow');
+});
+$(document).on("pagehide", "section", function() {
+	console.log('pagehide');
+});
+$(document).on("pageinit", "section", function() {
+	console.log('pageinit');
+});
+$(document).on("pagebeforecreate", "section", function() {
+	console.log('pagebeforecreate');
+});
+$(document).on("pagecreate", "section", function() {
+	console.log('pagecreate');
+});
+$(document).on("pagebeforeshow", "section", function() {
+	console.log('pagebeforeshow');
+});
+$(document).on("pagebeforehide", "section", function() {
+	console.log('pagebeforehide');
+});
+$(document).on("pagebeforechange", "section", function() {
+	console.log('pagebeforechange');
+});
+$(document).on("pagechange", "section", function() {
+	console.log('pagechange');
+});
+$(document).on("pagebeforeload", function() {
+	console.log('pagebeforeload');
+});
+$(document).on("pageload", function() {
+	console.log('pageload');
+});
+		</script>
+	</head>
+	<body>
+		
+<!-- Begin: page -->
+<section data-role="page" id="page1">
+	<header data-role="header">
+		<h1>jQuery Mobile</h1>
+	</header>
+	<div data-role="content">	
+		<p>This is Page 1.  
+		   <a href="#dialog" data-rel="dialog">Show Dialog</a></p>
+		   <a href="external.html">Go to page 2</a></p>
+	</div>
+	<footer data-role="footer">
+		<h3>O'Reilly</h3>
+	</footer>
+</section>
+
+<!-- Begin: dialog -->
+<section data-role="page" id="dialog">
+	<header data-role="header">
+		<h1>jQuery Mobile</h1>
+	</header>
+	<div data-role="content">	
+		<p>This is a dialog.</p>
+	</div>
+</section>
+
+	</body>
+</html>
